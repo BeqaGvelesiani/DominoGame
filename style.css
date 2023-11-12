@@ -1,3 +1,10 @@
+body {
+    display: grid;
+    place-items: center;
+    gap: 20px;
+    background-color: dimgray;
+}
+
 
 .domino {
 	width: 12em;
@@ -41,4 +48,17 @@
 
 .off {
     background-color: none;
+}
+
+.buttons {
+    width: 400px;
+    display: grid;
+}
+
+.topButtons,
+.bottomButtons {
+    margin: 1rem;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
 }
