@@ -1,3 +1,68 @@
 * {
     border: red 1px solid;
 }
+
+body {
+    background-color: rgb(208, 139, 54);
+    border: none;
+    padding: 3rem;
+}
+
+.domino-stone {
+    background-color: blanchedalmond;
+    --width: 100px;
+    width: var(--width);
+    height: calc(var(--width) * 2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(103, 97, 97);
+    box-shadow: 2px 2px 8px rgb(81, 80, 80), -2px -2px 3px 1px white, inset 0px 0px 5px rgb(76, 74, 74);
+    zoom: 3;
+}
+
+.domino-stone .sign {
+    height: var(--width);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    border: none;
+}
+
+.domino-stone .line {
+    height: 10px;
+    width: calc(var(--width) * 0.8);
+    margin: auto;
+    background-color: #000000;
+    background: linear-gradient(90deg, blanchedalmond 0%, rgb(71, 69, 69) 20%,  rgb(71, 69, 69) 80%, blanchedalmond 100%);
+    border: none;
+}
+
+.domino-stone .one::before {
+    content: "";
+    background-color: #776f6f;
+    border: 1px rgb(29, 28, 28) solid;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.domino-stone .two::before {
+    content: "";
+    background-color: #776f6f;
+    border: 1px rgb(29, 28, 28) solid;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(20px, -4px);
+}
+
+.domino-stone .two::after {
+    content: "";
+    background-color: #776f6f;
+    border: 1px rgb(29, 28, 28) solid;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-20px, 4px);
+}
