@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Domino Game</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
+    <script defer src="index.js" type="module"></script>
 </head>
 <body>
-    <div class="domino-stone">
-        <div class="sign one two up"></div>
-        <div class="line"></div>
-        <div class="sign three down"></div>
+    <div class="domino_stone" id="domino-stone">
+        <div class="domino">
+            <div class="part part-top" id="top">
+            </div>
+            <div class="part part-bottom" id="bottom">
+            </div>
+        </div>
     </div>
 </body>
 </html>

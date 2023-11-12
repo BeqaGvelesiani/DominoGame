@@ -1,70 +1,44 @@
-* {
-    border: red 1px solid;
+
+.domino {
+	width: 12em;
+	background: linear-gradient(to bottom right, rgb(39, 39, 39), rgb(17, 17, 17));
+	box-shadow: inset 0.1em 0.1em 0.2em rgba(255, 255, 255, 0.2),
+		inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.9), 0.1em 0.1em 2em rgba(0, 0, 0, 1);
+	display: grid;
+	border-radius: 1em;
+	gap: 2em;
+	padding: 2em;
+    zoom: 0.9;
+}
+.domino::before {
+	content: "";
+	height: 0.25em;
+	background: white;
+	grid-row: 2;
+	border-radius: 0.25em;
+}
+.domino .part {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
 }
 
-body {
-    background-color: rgb(208, 139, 54);
-    border: none;
-    padding: 3rem;
+.part span {
+	aspect-ratio: 1/1;
+	width: 100%;
+	border-radius: 50%;
+	
+	background-image: linear-gradient(transparent 50%, rgba(240, 240, 240) 50%);
+	background-size: 100% 220%;
+	background-position: 0 0%;
+	transition: background-position 0.25s ease;
 }
 
-.domino-stone {
-    --rotation: 0deg;
-    background-color: blanchedalmond;
-    --width: 100px;
-    width: var(--width);
-    height: calc(var(--width) * 2);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    border: 2px solid rgb(113, 111, 111);
-    box-shadow: inset 0px 0px 15px rgb(76, 74, 74);
-    zoom: 2;
-    transform: rotate(var(--rotation))
+
+.on {
+    background-color: white;
 }
 
-.domino-stone .sign {
-    height: var(--width);
-    text-align: center;
-    display: grid;
-    place-items: center;
-    border: none;
-}
-
-.domino-stone .line {
-    height: 10px;
-    width: calc(var(--width) * 0.8);
-    margin: auto;
-    background-color: #000000;
-    background: linear-gradient(90deg, blanchedalmond 0%, rgb(71, 69, 69) 20%,  rgb(71, 69, 69) 80%, blanchedalmond 100%);
-    border: none;
-}
-
-.domino-stone .one::before {
-    content: "";
-    background-color: #776f6f;
-    border: 1px rgb(29, 28, 28) solid;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.domino-stone .two::before {
-    content: "";
-    background-color: #776f6f;
-    border: 1px rgb(29, 28, 28) solid;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    transform: translate(20px, -4px);
-}
-
-.domino-stone .two::after {
-    content: "";
-    background-color: #776f6f;
-    border: 1px rgb(29, 28, 28) solid;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    transform: translate(-20px, 4px);
+.off {
+    background-color: none;
 }
