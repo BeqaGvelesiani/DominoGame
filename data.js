@@ -1,4 +1,4 @@
-const one = `export 
+export const one = `
 <span class="off"></span>
 <span class="off"></span>
 <span class="off"></span>
