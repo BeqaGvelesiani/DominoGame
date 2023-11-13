@@ -1,64 +1,71 @@
 body {
-    display: grid;
-    place-items: center;
-    gap: 20px;
-    background-color: dimgray;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+  background-color: dimgray;
 }
-
 
 .domino {
-	width: 12em;
-	background: linear-gradient(to bottom right, rgb(39, 39, 39), rgb(17, 17, 17));
-	box-shadow: inset 0.1em 0.1em 0.2em rgba(255, 255, 255, 0.2),
-		inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.9), 0.1em 0.1em 2em rgba(0, 0, 0, 1);
-	display: grid;
-	border-radius: 1em;
-	gap: 2em;
-	padding: 2em;
-    zoom: 0.9;
+  width: 12em;
+  background: linear-gradient(
+    to bottom right,
+    rgb(39, 39, 39),
+    rgb(17, 17, 17)
+  );
+  box-shadow: inset 0.1em 0.1em 0.2em rgba(255, 255, 255, 0.2),
+    inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.9),
+    0.1em 0.1em 2em rgba(0, 0, 0, 1);
+  display: grid;
+  border-radius: 1em;
+  gap: 2em;
+  padding: 2em;
+  zoom: 0.9;
 }
 .domino::before {
-	content: "";
-	height: 0.25em;
-	background: white;
-	grid-row: 2;
-	border-radius: 0.25em;
+  content: "";
+  height: 0.25em;
+  background: white;
+  grid-row: 2;
+  border-radius: 0.25em;
 }
 .domino .part {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
 }
 
 .part span {
-	aspect-ratio: 1/1;
-	width: 100%;
-	border-radius: 50%;
-	
-	background-image: linear-gradient(transparent 50%, rgba(240, 240, 240) 50%);
-	background-size: 100% 220%;
-	background-position: 0 0%;
-	transition: background-position 0.25s ease;
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 50%;
+
+  background-image: linear-gradient(transparent 50%, rgba(240, 240, 240) 50%);
+  background-size: 100% 220%;
+  background-position: 0 0%;
+  transition: background-position 0.25s ease;
 }
 
-
 .on {
-    background-color: white;
+  background-color: white;
+  box-shadow: 5px 4px 16px 2px rgba(0, 0, 0, 0.51) inset;
+  -webkit-box-shadow: 5px 4px 16px 2px rgba(0, 0, 0, 0.51) inset;
+  -moz-box-shadow: 5px 4px 16px 2px rgba(0, 0, 0, 0.51) inset;
+  border: 5px solid rgb(47, 45, 45);
 }
 
 .off {
-    background-color: none;
+  background-color: none;
 }
 
 .buttons {
-    width: 400px;
-    display: grid;
+  width: 400px;
+  display: grid;
 }
 
 .topButtons,
 .bottomButtons {
-    margin: 1rem;
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+  margin: 1rem;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
