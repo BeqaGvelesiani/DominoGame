@@ -80,3 +80,17 @@ body {
   color: whitesmoke;
   font-weight: 900;
 }
+
+.logSection {
+  display: grid;
+  place-items: left;
+  width: 70%;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  border: 1px solid red;
+}
+
+.logSection .domino {
+  zoom: 0.2;
+  margin-left: 0;
+}
