@@ -72,6 +72,15 @@ document.getElementById("generate").addEventListener("click", () => {
   dominos.splice(L, 1);
 
   console.log(dominos.length);
+
+
+  document.getElementById("generate").style.backgroundColor =
+    "rgb(21, 213, 21)";
+
+    setTimeout(function(){
+      document.getElementById("generate").style.backgroundColor = "brown";  
+    }, 100)
+
 });
 
 function renderLog(arr) {

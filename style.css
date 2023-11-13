@@ -76,8 +76,12 @@ body {
   height: 50px;
   border-radius: 4px;
   background-color: brown;
-  color: whitesmoke;
+  color: rgb(1, 1, 1);
+  font-size: 1rem;
+  text-transform: capitalize;
   font-weight: 900;
+  border: none;
+  box-sizing: border-box;
 }
 
 .logSection {
