@@ -85,12 +85,29 @@ body {
   display: grid;
   place-items: left;
   width: 70%;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(14, 1fr);
   gap: 16px;
-  
 }
 
 .logSection .domino {
   zoom: 0.2;
   margin-left: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .domino {
+    zoom: 0.4;
+  }
+
+  .logSection {
+  width: 95%;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.logSection .domino {
+  zoom: 0.15;
+  margin: 0;
+}
 }
