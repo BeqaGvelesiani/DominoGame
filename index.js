@@ -40,17 +40,38 @@ const dominos = [
 ];
 
 
-console.log(dominos.length);
-
 let log = [];
 
 document.getElementById("generate").addEventListener("click", () => {
-  let a = random(0, 6);
-  let b = random(0, 6);
+  let L = random(0, dominos.length - 1);
+
+  console.log(`L = ${L}`);
+
+  let current_tile = dominos[L];
+
+  console.log(current_tile);
+
+  let index = random(0, 1);
+
+  let a = current_tile[index];
+
+  let b;
+
+  if (index) {
+    b = current_tile[0];
+  } else {
+    b = current_tile[1];
+  }
+
+  console.log(`a=${a}     b=${b}   index=${index}`);
+
   domino(a, b);
   log.push([a, b]);
-  console.log(log);
   renderLog(log);
+
+  dominos.splice(L, 1);
+
+  console.log(dominos.length);
 });
 
 function renderLog(arr) {
