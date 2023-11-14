@@ -133,7 +133,7 @@ export function number(a) {
 }
 for (var i = 1; i < 8; i++) {
   document.getElementById("OnHandSection").innerHTML += `
-    <div class="domino OnHandDomino" id="OnHandDomino${i}">
+    <div class="domino OnHandDomino bordered" id="OnHandDomino${i}">
         <div class="part part-top" id="">
           <span class="off"></span>
           <span class="off"></span>

@@ -5,9 +5,9 @@ body {
   background-color: dimgray;
 }
 
-.bordered {
+/* .bordered {
   border: red 1px solid;
-}
+} */
 
 .domino {
   width: 8rem;
@@ -76,7 +76,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-#generate {
+/* #generate {
   width: 300px;
   height: 50px;
   border-radius: 4px;
@@ -87,7 +87,7 @@ body {
   font-weight: 900;
   border: none;
   box-sizing: border-box;
-}
+} */
 
 .logSection {
   display: grid;
@@ -103,25 +103,32 @@ body {
   zoom: 0.4;
 }
 
-
+h1 {
+  font-size: 1rem;
+  color: rgb(34, 31, 25);
+  text-shadow: black 0px 0px 1px;
+  background-color: bisque;
+  border-radius: 4px;
+  padding: 4px;
+  box-shadow: 0px 0px 20px 5px red;
+}
 
 #OnHandSection {
   height: fit-content;
-  width: 70%;
+  width: 100vw;
   border-radius: 16px;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(7, 1fr);
-}
-
-#OnHandSection h1 {
-  width: 200px;
+  box-sizing: border-box;
   margin: auto;
 }
 
+
 .OnHandDomino {
   opacity: 0.2;
-  transform: scale(0.6);
+  /* transform: scale(0.5); */
+  zoom: 0.4;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -139,10 +146,11 @@ body {
 
 @media only screen and (max-width: 600px) {
   .domino {
-    transform: scale(0.9);
+    zoom: 0.9;
   }
 
   .logSection {
+    width: 100vw;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
   }
@@ -151,4 +159,13 @@ body {
     zoom: 0.2;
     margin: 0;
   }
+
+  .OnHandDomino {
+  opacity: 0.2;
+  /* transform: scale(0.5); */
+  zoom: 0.2;
 }
+}
+
+
+

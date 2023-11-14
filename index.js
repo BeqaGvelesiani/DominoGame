@@ -38,8 +38,6 @@ let tableTiles = [...dominos];
 
 let OnHandDomino = [];
 
-console.log(`number of table domino: ` + tableTiles.length);
-
 generate();
 
 function generate() {
@@ -48,19 +46,17 @@ function generate() {
   for (var i = 0; i < 28; i++) {
     setbuttons(i);
   }
-
-  dominos = [];
 }
 
 function rendertable() {
-  for (var i = 0; i < dominos.length; i++) {
+  for (var i = 0; i < tableTiles.length; i++) {
     document.getElementById("logSection").innerHTML += `
-      <div class="domino" id="logDomino${i}" style="opacity: 1">
+      <div class="domino bordered" id="logDomino${i}" style="opacity: 1">
           <div class="part part-top" id="">
-              ${number(dominos[i][0])}
+              ${number(tableTiles[i][0])}
           </div>
           <div class="part part-bottom" id="">
-              ${number(dominos[i][1])}
+              ${number(tableTiles[i][1])}
           </div>
         </div>
       `;
@@ -69,18 +65,20 @@ function rendertable() {
 
 function setbuttons(i) {
   document.getElementById(`logDomino${i}`).addEventListener("click", () => {
-    document.getElementById(`logDomino${i}`).style.opacity = "0.3";
-    if (tableTiles[i][2] === undefined) {
-      tableTiles[i].push(0);
-      document.getElementById(`logDomino${i}`).style.cursor = "default";
-      OnHandDomino.push(tableTiles[i]);
+    if (OnHandDomino.length < 7) {
+      console.log("onhand domino   " + OnHandDomino.length);
+      document.getElementById(`logDomino${i}`).style.opacity = "0.3";
+      if ((tableTiles[i][2] === undefined) & (OnHandDomino.length < 8)) {
+        tableTiles[i].push(0);
+        document.getElementById(`logDomino${i}`).style.cursor = "default";
+        OnHandDomino.push(tableTiles[i]);
 
-      console.log("i = " + i)
-      let fr = OnHandDomino.length
-      console.log(fr);
+        console.log("i = " + i);
+        let fr = OnHandDomino.length;
+        console.log(fr);
 
-      document.getElementById(`OnHandDomino${fr}`).innerHTML = `
-          <div class="part part-top" id="">
+        document.getElementById(`OnHandDomino${fr}`).innerHTML = `
+          <div class="bordered part part-top" id="">
               ${number(OnHandDomino[fr - 1][0])}
           </div>
           <div class="part part-bottom" id="">
@@ -88,7 +86,8 @@ function setbuttons(i) {
           </div>
       `;
 
-      document.getElementById(`OnHandDomino${fr}`).style.opacity = "1";
+        document.getElementById(`OnHandDomino${fr}`).style.opacity = "1";
+      }
     }
   });
 }
