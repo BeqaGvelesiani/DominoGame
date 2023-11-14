@@ -6,7 +6,7 @@ body {
 }
 
 .domino {
-  width: 12em;
+  width: 8rem;
   background: linear-gradient(
     to bottom right,
     rgb(39, 39, 39),
@@ -19,7 +19,7 @@ body {
   border-radius: 1em;
   gap: 2em;
   padding: 2em;
-  zoom: 0.9;
+  transform: scale(0.5);
 }
 .domino::before {
   content: "";
@@ -43,6 +43,7 @@ body {
   background-size: 100% 220%;
   background-position: 0 0%;
   transition: background-position 0.25s ease;
+  transform: scale(1.3);
 }
 
 .on {
@@ -112,12 +113,12 @@ body {
 
 @media only screen and (max-width: 600px) {
   .domino {
-    zoom: 0.4;
+    transform: scale(0.9);
   }
 
   .logSection {
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 5px;
   }
 
   .logSection .domino {
