@@ -1,14 +1,9 @@
 import { domino } from "./data.js";
 import { number } from "./data.js";
 
-function random(a, b) {
-  let i = b - a + 1;
-  return Math.floor(Math.random() * i) + a;
-}
+//domino(0, 0);
 
-domino(0, 0);
-
-const dominos = [
+let dominos = [
   [0, 0],
   [0, 1],
   [0, 2],
@@ -39,76 +34,46 @@ const dominos = [
   [6, 6],
 ];
 
+let tableTiles = [...dominos];
 
-let log = [];
+console.log(tableTiles.length);
 
 document.getElementById("generate").addEventListener("click", () => {
-  let L = random(0, dominos.length - 1);
+  rendertable();
 
-  console.log(`L = ${L}`);
-
-  let current_tile = dominos[L];
-
-  console.log(current_tile);
-
-  let index = random(0, 1);
-
-  let a = current_tile[index];
-
-  let b;
-
-  if (index) {
-    b = current_tile[0];
-  } else {
-    b = current_tile[1];
+  for (var i = 0; i < 28; i++) {
+    setbuttons(i);
   }
 
-  console.log(`a=${a}     b=${b}   index=${index}`);
+  dominos = [];
 
-  domino(a, b);
-  log.push([a, b]);
-  renderLog(log);
-
-  dominos.splice(L, 1);
-
-  console.log(dominos.length);
-
-
-  document.getElementById("generate").style.backgroundColor =
-    "rgb(21, 213, 21)";
-
-    setTimeout(function(){
-      document.getElementById("generate").style.backgroundColor = "brown";  
-    }, 100)
-
+  document.getElementById("generate").style.backgroundColor = "yellow";
+  setTimeout(function () {
+    document.getElementById("generate").style.backgroundColor = "brown";
+  }, 50);
 });
 
-function renderLog(arr) {
-
-      document.getElementById("logSection").innerHTML += `
-      <div class="domino" id="logDomino">
+function rendertable() {
+  for (var i = 0; i < dominos.length; i++) {
+    document.getElementById("logSection").innerHTML += `
+      <div class="domino" id="logDomino${i}" style="opacity: 1">
           <div class="part part-top" id="">
-              ${number(arr[arr.length - 1][0])}
+              ${number(dominos[i][0])}
           </div>
           <div class="part part-bottom" id="">
-              ${number(arr[arr.length - 1][1])}
+              ${number(dominos[i][1])}
           </div>
         </div>
       `;
+  }
+}
 
-
-
-  // document.getElementById("logSection").innerHTML = ""
-  //   for (var i = 0; i < arr.length; i++) {
-  //     document.getElementById("logSection").innerHTML += `
-  //     <div class="domino" id="logDomino">
-  //         <div class="part part-top" id="">
-  //             ${number(arr[i][0])}
-  //         </div>
-  //         <div class="part part-bottom" id="">
-  //             ${number(arr[i][1])}
-  //         </div>
-  //       </div>
-  //     `;
-  //   }
+function setbuttons(i) {
+  document.getElementById(`logDomino${i}`).addEventListener("click", () => {
+    document.getElementById(`logDomino${i}`).style.opacity = "0.3";
+    if (tableTiles[i][2] === undefined) {
+      tableTiles[i].push(0);
+      document.getElementById(`logDomino${i}`).style.cursor = "default"
+    }
+  });
 }
