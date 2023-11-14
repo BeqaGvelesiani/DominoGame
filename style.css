@@ -19,7 +19,7 @@ body {
   border-radius: 1em;
   gap: 2em;
   padding: 2em;
-  transform: scale(0.5);
+  transform: scale(0.9);
 }
 .domino::before {
   content: "";
