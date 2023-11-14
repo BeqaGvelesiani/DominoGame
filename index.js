@@ -36,11 +36,13 @@ let dominos = [
 
 let tableTiles = [...dominos];
 
-console.log(tableTiles.length);
+let OnHandDomino = [];
+
+console.log(`number of table domino: ` + tableTiles.length);
 
 generate();
 
-function generate(){
+function generate() {
   rendertable();
 
   for (var i = 0; i < 28; i++) {
@@ -48,12 +50,7 @@ function generate(){
   }
 
   dominos = [];
-
-  document.getElementById("generate").style.backgroundColor = "yellow";
-  setTimeout(function () {
-    document.getElementById("generate").style.backgroundColor = "brown";
-  }, 50);
-};
+}
 
 function rendertable() {
   for (var i = 0; i < dominos.length; i++) {
@@ -75,9 +72,23 @@ function setbuttons(i) {
     document.getElementById(`logDomino${i}`).style.opacity = "0.3";
     if (tableTiles[i][2] === undefined) {
       tableTiles[i].push(0);
-      document.getElementById(`logDomino${i}`).style.cursor = "default"
+      document.getElementById(`logDomino${i}`).style.cursor = "default";
+      OnHandDomino.push(tableTiles[i]);
+
+      console.log("i = " + i)
+      let fr = OnHandDomino.length
+      console.log(fr);
+
+      document.getElementById(`OnHandDomino${fr}`).innerHTML = `
+          <div class="part part-top" id="">
+              ${number(OnHandDomino[fr - 1][0])}
+          </div>
+          <div class="part part-bottom" id="">
+              ${number(OnHandDomino[fr - 1][1])}
+          </div>
+      `;
+
+      document.getElementById(`OnHandDomino${fr}`).style.opacity = "1";
     }
   });
 }
-
-
