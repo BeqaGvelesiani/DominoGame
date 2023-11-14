@@ -5,6 +5,10 @@ body {
   background-color: dimgray;
 }
 
+.bordered {
+  border: red 1px solid;
+}
+
 .domino {
   width: 8rem;
   background: linear-gradient(
@@ -97,6 +101,27 @@ body {
   margin-left: 0;
   cursor: pointer;
   zoom: 0.4;
+}
+
+
+
+#OnHandSection {
+  height: fit-content;
+  width: 70%;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#OnHandSection h1 {
+  width: 200px;
+  margin: auto;
+}
+
+.OnHandDomino {
+  opacity: 0.2;
+  transform: scale(0.6);
 }
 
 @media only screen and (max-width: 1200px) {

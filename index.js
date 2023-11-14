@@ -38,7 +38,9 @@ let tableTiles = [...dominos];
 
 console.log(tableTiles.length);
 
-document.getElementById("generate").addEventListener("click", () => {
+generate();
+
+function generate(){
   rendertable();
 
   for (var i = 0; i < 28; i++) {
@@ -51,7 +53,7 @@ document.getElementById("generate").addEventListener("click", () => {
   setTimeout(function () {
     document.getElementById("generate").style.backgroundColor = "brown";
   }, 50);
-});
+};
 
 function rendertable() {
   for (var i = 0; i < dominos.length; i++) {
@@ -77,3 +79,5 @@ function setbuttons(i) {
     }
   });
 }
+
+
