@@ -11,8 +11,8 @@ body {
   background-size: 16px 16px;
   height: 91vh;
 }
-
-/* .bordered {
+/* 
+.bordered {
   border: red 1px solid;
 } */
 
@@ -27,10 +27,10 @@ body {
     inset -0.1em -0.1em 0.2em rgba(0, 0, 0, 0.9),
     0.1em 0.1em 2em rgba(0, 0, 0, 1);
   display: grid;
-  border-radius: 1em;
-  gap: 2em;
-  padding: 2em;
-  transform: scale(0.9);
+  border-radius: 0.8em;
+  gap: 1.9rem;
+  padding: 1.9rem;
+  transform: scale(0.8);
 }
 .domino::before {
   content: "";
@@ -74,14 +74,6 @@ body {
   display: grid;
 }
 
-.topButtons,
-.bottomButtons {
-  margin: 1rem;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 #start {
   display: none;
   width: 300px;
@@ -99,18 +91,9 @@ body {
   cursor: pointer;
 }
 
-.logSection {
-  display: grid;
-  place-items: left;
-  width: fit-content;
-  grid-template-columns: repeat(14, 1fr);
-  gap: 16px;
-}
-
-.logSection .domino {
-  margin-left: 0;
+.domino {
   cursor: pointer;
-  zoom: 0.4;
+  zoom: 0.3;
 }
 
 #OnHandSection,
@@ -152,6 +135,10 @@ section h1 {
 }
 
 .section2 {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 0px;
+  height: fit-content;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -173,12 +160,20 @@ section h1 {
   .logSection {
     width: 95%;
   }
+
+  .domino {
+    zoom: 0.25;
+  }
 }
 
 @media only screen and (max-width: 900px) {
   .logSection {
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
+    gap: 5px;
+  }
+
+  .domino {
+    zoom: 0.25;
   }
 }
 
@@ -187,15 +182,14 @@ section h1 {
     zoom: 0.9;
   }
 
-  .logSection {
+  .section2 {
     width: 100vw;
     grid-template-columns: repeat(7, 1fr);
-    gap: 5px;
+    place-items: center;
   }
 
-  .logSection .domino {
+  .domino {
     zoom: 0.2;
-    margin: 0;
   }
 
   .OnHandDomino {
