@@ -161,7 +161,7 @@ for (var i = 1; i < 8; i++) {
 
 for (var i = 1; i < 8; i++) {
   document.getElementById("rivalSection").innerHTML += `
-    <div class="domino OnHandDomino bordered" id="rivalDomino${i}">
+    <div class="domino bordered rivalDomino" id="">
         <div class="part part-top" id="">
           <span class="off"></span>
           <span class="off"></span>

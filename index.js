@@ -90,9 +90,18 @@ function setbuttons(i) {
       }
     }
 
-    if(OnHandDomino.length == 7){
+
+    if (OnHandDomino.length == 7) {
       document.getElementById("start").style.display = "block";
+      document.getElementById("start").addEventListener("click", () => {
+        document.querySelector(".section2").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        document.querySelector("#rivalSection").style.opacity = "1";
+      });
     }
 
+   
+      
+    
   });
 }
