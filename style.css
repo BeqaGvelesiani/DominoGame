@@ -3,9 +3,13 @@ body {
   display: grid;
   place-items: center;
   gap: 20px;
-  background-color: dimgray;
+  background: radial-gradient(#252525 15%, transparent 16%) 0 0,
+    radial-gradient(#252525 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.3) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.3) 15%, transparent 20%) 8px 9px;
+  background-color: #210606c9;
+  background-size: 16px 16px;
   height: 91vh;
-  border: pink 2px doted;
 }
 
 /* .bordered {
@@ -83,7 +87,7 @@ body {
   width: 300px;
   height: 50px;
   border-radius: 4px;
-  background-color: rgb(227, 10, 10);
+  background-color: #a3b763;
   color: rgb(1, 1, 1);
   font-size: 1rem;
   text-transform: capitalize;
@@ -91,7 +95,7 @@ body {
   border: none;
   box-sizing: border-box;
   z-index: 2;
-  box-shadow: 18px 18px 30px black, -18px -18px  30px #ffffff1d;
+  box-shadow: 18px 18px 40px black, -18px -18px 30px #ffffff1d;
   cursor: pointer;
 }
 
@@ -119,15 +123,15 @@ body {
   box-sizing: border-box;
 }
 
-
-section h1  {
+section h1 {
   position: relative;
-  background-color: #ECF0F3;
+  background-color: #ecf0f3;
   font-size: 1.6rem;
   color: #252525;
-  box-shadow: 10px 10px 5px  #35383c, inset 10px 10px 7px  #c3c4c5c6, inset -10px -10px 10px #fdfcfc;
+  box-shadow: 10px 10px 5px #35383c, inset 10px 10px 7px #c3c4c5c6,
+    inset -10px -10px 10px #fdfcfc;
   border-radius: 8px;
-  border: 5px solid #ECF0F3;
+  border: 5px solid #ecf0f3;
   padding: 4px;
   font-family: sans-serif;
   width: 150px;
@@ -145,7 +149,6 @@ section h1  {
 .section3 {
   position: absolute;
   bottom: 0;
-  
 }
 
 .section2 {
@@ -155,7 +158,7 @@ section h1  {
   transform: translate(-50%, -50%);
 }
 
-.section1, 
+.section1,
 .section2 {
   width: fit-content;
 }
@@ -196,11 +199,8 @@ section h1  {
   }
 
   .OnHandDomino {
-  opacity: 0.2;
-  /* transform: scale(0.5); */
-  zoom: 0.2;
+    opacity: 0.2;
+    /* transform: scale(0.5); */
+    zoom: 0.2;
+  }
 }
-}
-
-
-
