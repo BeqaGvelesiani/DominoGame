@@ -158,3 +158,31 @@ for (var i = 1; i < 8; i++) {
         </div>
       </div>`;
 }
+
+for (var i = 1; i < 8; i++) {
+  document.getElementById("rivalSection").innerHTML += `
+    <div class="domino OnHandDomino bordered" id="rivalDomino${i}">
+        <div class="part part-top" id="">
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+        </div>
+        <div class="part part-bottom" id="">
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+          <span class="off"></span>
+        </div>
+      </div>`;
+}

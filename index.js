@@ -66,16 +66,16 @@ function rendertable() {
 function setbuttons(i) {
   document.getElementById(`logDomino${i}`).addEventListener("click", () => {
     if (OnHandDomino.length < 7) {
-      console.log("onhand domino   " + OnHandDomino.length);
+      console.log(OnHandDomino);
       document.getElementById(`logDomino${i}`).style.opacity = "0.3";
       if ((tableTiles[i][2] === undefined) & (OnHandDomino.length < 8)) {
         tableTiles[i].push(0);
         document.getElementById(`logDomino${i}`).style.cursor = "default";
         OnHandDomino.push(tableTiles[i]);
 
-        console.log("i = " + i);
+        //console.log("i = " + i);
         let fr = OnHandDomino.length;
-        console.log(fr);
+        //console.log(fr);
 
         document.getElementById(`OnHandDomino${fr}`).innerHTML = `
           <div class="bordered part part-top" id="">
@@ -89,5 +89,10 @@ function setbuttons(i) {
         document.getElementById(`OnHandDomino${fr}`).style.opacity = "1";
       }
     }
+
+    if(OnHandDomino.length == 7){
+      document.getElementById("start").style.display = "block";
+    }
+
   });
 }

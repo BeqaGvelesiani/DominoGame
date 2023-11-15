@@ -1,8 +1,11 @@
 body {
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   gap: 20px;
   background-color: dimgray;
+  height: 91vh;
+  border: pink 2px doted;
 }
 
 /* .bordered {
@@ -10,7 +13,7 @@ body {
 } */
 
 .domino {
-  width: 8rem;
+  width: 10rem;
   background: linear-gradient(
     to bottom right,
     rgb(39, 39, 39),
@@ -42,7 +45,6 @@ body {
   aspect-ratio: 1/1;
   width: 100%;
   border-radius: 50%;
-
   background-image: linear-gradient(transparent 50%, rgba(240, 240, 240) 50%);
   background-size: 100% 220%;
   background-position: 0 0%;
@@ -76,18 +78,22 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-/* #generate {
+#start {
+  display: none;
   width: 300px;
   height: 50px;
   border-radius: 4px;
-  background-color: brown;
+  background-color: rgb(227, 10, 10);
   color: rgb(1, 1, 1);
   font-size: 1rem;
   text-transform: capitalize;
   font-weight: 900;
   border: none;
   box-sizing: border-box;
-} */
+  z-index: 2;
+  box-shadow: 18px 18px 30px black, -18px -18px  30px #ffffff1d;
+  cursor: pointer;
+}
 
 .logSection {
   display: grid;
@@ -103,27 +109,56 @@ body {
   zoom: 0.4;
 }
 
-h1 {
-  font-size: 1rem;
-  color: rgb(34, 31, 25);
-  text-shadow: black 0px 0px 1px;
-  background-color: bisque;
-  border-radius: 4px;
-  padding: 4px;
-  box-shadow: 0px 0px 20px 5px red;
-}
-
-#OnHandSection {
+#OnHandSection,
+#rivalSection {
   height: fit-content;
-  width: 60vw;
+  width: 100vw;
   border-radius: 16px;
-  display: grid;
-  place-items: center;
-  grid-template-columns: repeat(7, 1fr);
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
-  margin: auto;
 }
 
+
+section h1  {
+  position: relative;
+  background-color: #ECF0F3;
+  font-size: 1.6rem;
+  color: #252525;
+  box-shadow: 10px 10px 5px  #35383c, inset 10px 10px 7px  #c3c4c5c6, inset -10px -10px 10px #fdfcfc;
+  border-radius: 8px;
+  border: 5px solid #ECF0F3;
+  padding: 4px;
+  font-family: sans-serif;
+  width: 150px;
+  margin: 0.1rem auto;
+  text-align: center;
+  text-shadow: 7px 7px 6px rgba(0, 0, 0, 0.422);
+  transform: scale(0.5);
+}
+
+.section1 {
+  position: absolute;
+  top: 0;
+}
+
+.section3 {
+  position: absolute;
+  bottom: 0;
+  
+}
+
+.section2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.section1, 
+.section2 {
+  width: fit-content;
+}
 
 .OnHandDomino {
   opacity: 0.2;
