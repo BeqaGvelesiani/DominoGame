@@ -1,5 +1,5 @@
-const top_part = document.getElementById("top");
-const bottom_part = document.getElementById("bottom");
+const top_part = $("#top");
+const bottom_part = $("#bottom");
 
 const zero = `
 <span class="off"></span>
@@ -82,35 +82,35 @@ const six = `
 
 export function domino(a, b) {
   if (a == 1) {
-    top_part.innerHTML = one;
+    top_part.html(`${one}`);
   } else if (a == 2) {
-    top_part.innerHTML = two;
+    top_part.html(`${two}`);
   } else if (a == 3) {
-    top_part.innerHTML = three;
+    top_part.html(`${three}`);
   } else if (a == 4) {
-    top_part.innerHTML = four;
+    top_part.html(`${four}`);
   } else if (a == 5) {
-    top_part.innerHTML = five;
+    top_part.html(`${five}`);
   } else if (a == 0) {
-    top_part.innerHTML = zero;
+    top_part.html(`${zero}`);
   } else {
-    top_part.innerHTML = six;
+    top_part.html(`${six}`);
   }
 
   if (b == 1) {
-    bottom_part.innerHTML = one;
+    bottom_part.html(`${one}`);
   } else if (b == 2) {
-    bottom_part.innerHTML = two;
+    bottom_part.html(`${two}`);
   } else if (b == 3) {
-    bottom_part.innerHTML = three;
+    bottom_part.html(`${three}`);
   } else if (b == 4) {
-    bottom_part.innerHTML = four;
+    bottom_part.html(`${four}`);
   } else if (b == 5) {
-    bottom_part.innerHTML = five;
+    bottom_part.html(`${five}`);
   } else if (a == 0) {
-    bottom_part.innerHTML = zero;
+    bottom_part.html(`${zero}`);
   } else {
-    bottom_part.innerHTML = six;
+    bottom_part.html(`${six}`);
   }
 }
 
@@ -132,7 +132,7 @@ export function number(a) {
   }
 }
 for (var i = 1; i < 8; i++) {
-  document.getElementById("OnHandSection").innerHTML += `
+  $("#OnHandSection").append(`
     <div class="domino OnHandDomino bordered" id="OnHandDomino${i}">
         <div class="part part-top" id="">
           <span class="off"></span>
@@ -156,11 +156,11 @@ for (var i = 1; i < 8; i++) {
           <span class="off"></span>
           <span class="off"></span>
         </div>
-      </div>`;
+      </div>`);
 }
 
 for (var i = 1; i < 8; i++) {
-  document.getElementById("rivalSection").innerHTML += `
+  $("#rivalSection").append(`
     <div class="domino bordered rivalDomino" id="">
         <div class="part part-top" id="">
           <span class="off"></span>
@@ -184,5 +184,5 @@ for (var i = 1; i < 8; i++) {
           <span class="off"></span>
           <span class="off"></span>
         </div>
-      </div>`;
+      </div>`);
 }
