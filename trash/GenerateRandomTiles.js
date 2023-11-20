@@ -1,5 +1,5 @@
-import { domino } from "./data.js";
-import { number } from "./data.js";
+import { domino } from "../data.js";
+import { number } from "../data.js";
 
 function random(a, b) {
   let i = b - a + 1;

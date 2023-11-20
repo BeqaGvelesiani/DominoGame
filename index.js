@@ -86,22 +86,19 @@ function setbuttons(i) {
           </div>
       `;
 
-        document.getElementById(`OnHandDomino${fr}`).style.opacity = "1";
+        $(`#OnHandDomino${fr}`).css("opacity", "1");
       }
     }
 
-
     if (OnHandDomino.length == 7) {
-      document.getElementById("start").style.display = "block";
-      document.getElementById("start").addEventListener("click", () => {
-        document.querySelector(".section2").style.display = "none";
-        document.getElementById("start").style.display = "none";
-        document.querySelector("#rivalSection").style.opacity = "1";
+      $("#start").css("display", "block");
+      document.querySelector("#start").addEventListener("click", () => {
+        $(".section2").css("display", "none");
+        $("#start").css("display", "none");
+        $("#rivalSection").css("opacity", "1");
       });
     }
-
-   
-      
-    
   });
 }
+
+console.log($("#rivalSection"));
