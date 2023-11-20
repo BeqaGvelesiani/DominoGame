@@ -50,7 +50,7 @@ function generate() {
 
 function rendertable() {
   for (var i = 0; i < tableTiles.length; i++) {
-    document.getElementById("logSection").innerHTML += `
+    $("#logSection").append(`
       <div class="domino bordered" id="logDomino${i}" style="opacity: 1">
           <div class="part part-top" id="">
               ${number(tableTiles[i][0])}
@@ -59,32 +59,34 @@ function rendertable() {
               ${number(tableTiles[i][1])}
           </div>
         </div>
-      `;
+      `);
   }
 }
 
 function setbuttons(i) {
-  document.getElementById(`logDomino${i}`).addEventListener("click", () => {
+  $(`#logDomino${i}`).click(() => {
     if (OnHandDomino.length < 7) {
       console.log(OnHandDomino);
-      document.getElementById(`logDomino${i}`).style.opacity = "0.3";
+      $(`#logDomino${i}`).css("opacity", "0.3");
+
       if ((tableTiles[i][2] === undefined) & (OnHandDomino.length < 8)) {
         tableTiles[i].push(0);
-        document.getElementById(`logDomino${i}`).style.cursor = "default";
+        $(`#logDomino${i}`).css("cursor", "default");
+
         OnHandDomino.push(tableTiles[i]);
 
         //console.log("i = " + i);
         let fr = OnHandDomino.length;
         //console.log(fr);
 
-        document.getElementById(`OnHandDomino${fr}`).innerHTML = `
+        $(`#OnHandDomino${fr}`).html(`
           <div class="bordered part part-top" id="">
               ${number(OnHandDomino[fr - 1][0])}
           </div>
           <div class="part part-bottom" id="">
               ${number(OnHandDomino[fr - 1][1])}
           </div>
-      `;
+      `);
 
         $(`#OnHandDomino${fr}`).css("opacity", "1");
       }
@@ -92,7 +94,7 @@ function setbuttons(i) {
 
     if (OnHandDomino.length == 7) {
       $("#start").css("display", "block");
-      document.querySelector("#start").addEventListener("click", () => {
+      $("#start").click(() => {
         $(".section2").css("display", "none");
         $("#start").css("display", "none");
         $("#rivalSection").css("opacity", "1");
