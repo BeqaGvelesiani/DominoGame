@@ -98,9 +98,20 @@ function setbuttons(i) {
         $(".section2").slideUp();
         $("#start").slideUp();
         $("#rivalSection").animate({opacity: 1});
+        $(".question").slideDown()
       });
     }
   });
 }
 
-console.log($("#rivalSection"));
+$(".question").hide()
+
+$("#down").click(()=>{
+  $(".question").hide()
+  $(".section3 h1").append(`   <span class="material-symbols-outlined">star</span>`)
+})
+
+$("#up").click(()=>{
+  $(".question").hide()
+  $(".section1 h1").append(`   <span class="material-symbols-outlined">star</span>`)
+})
