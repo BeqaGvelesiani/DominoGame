@@ -93,10 +93,10 @@ function setbuttons(i) {
     }
 
     if (OnHandDomino.length == 7) {
-      $("#start").css("display", "block");
+      $("#start").show();
       $("#start").click(() => {
-        $(".section2").css("display", "none");
-        $("#start").css("display", "none");
+        $(".section2").hide();
+        $("#start").hide();
         $("#rivalSection").css("opacity", "1");
       });
     }
