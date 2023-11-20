@@ -88,16 +88,16 @@ function setbuttons(i) {
           </div>
       `);
 
-        $(`#OnHandDomino${fr}`).css("opacity", "1");
+        $(`#OnHandDomino${fr}`).animate({opacity: 1});
       }
     }
 
     if (OnHandDomino.length == 7) {
       $("#start").show();
       $("#start").click(() => {
-        $(".section2").hide();
-        $("#start").hide();
-        $("#rivalSection").css("opacity", "1");
+        $(".section2").slideUp();
+        $("#start").slideUp();
+        $("#rivalSection").animate({opacity: 1});
       });
     }
   });
